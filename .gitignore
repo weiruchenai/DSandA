@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+#IDEA文件
+.idea
+target
+SSM.iml
+=======
+
 # Compiled class file
 *.class
 
