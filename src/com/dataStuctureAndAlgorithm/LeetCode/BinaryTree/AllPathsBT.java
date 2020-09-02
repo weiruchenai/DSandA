@@ -36,4 +36,11 @@ public class AllPathsBT {
 		binaryTreePaths(root.right, sb);
 	}
 	
+	public static void main(String[] args) {
+		StringBuilder s1 = new StringBuilder("111");
+		StringBuilder s2 = s1;
+		s1.append("222");
+		System.out.println(s2);
+	}
+	
 }
