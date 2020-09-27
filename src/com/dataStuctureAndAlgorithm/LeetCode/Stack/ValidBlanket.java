@@ -9,6 +9,7 @@ import java.util.Stack;
 *   若当前括号是一个左括号，将其存入Stack.push
 *   若当前括号是一个右括号，Stack.pop出一个元素若不匹配则为false
 *   若栈深超过string.length / 2，直接return false
+*   若全部匹配，则最终栈为空
 * */
 public class ValidBlanket {
 

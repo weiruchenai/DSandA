@@ -12,7 +12,7 @@ package com.dataStuctureAndAlgorithm.LeetCode.DynamicProgramming;
 *        3、选择：对于dp[i]，则等于num[i] + max(dp[i - 2],...,dp[0])
 * */
 public class Rob_198 {
-	public int rob(int[] nums) {
+/*	public int rob(int[] nums) {
 		if(nums.length == 1) return nums[0];
 		if(nums.length == 2) return Math.max(nums[0], nums[1]);
 		
@@ -28,6 +28,22 @@ public class Rob_198 {
 		}
 		
 		int max = Integer.MIN_VALUE;
+		for (int i : dp) {
+			if(i > max) max = i;
+		}
+		return max;
+	}*/
+	
+	public int rob(int[] nums){
+		if(nums.length == 1) return nums[0];
+		int[] dp = new int[nums.length + 2];
+		//从最后一间开始偷，最大值即为最后一间房的钱
+		dp[nums.length - 1] = nums[nums.length - 1];
+		for (int i = nums.length - 1; i >= 0 ; i--) {
+			dp[i] = Math.max(dp[i + 1], nums[i] + dp[i + 2]);
+		}
+		
+		int max = 0;
 		for (int i : dp) {
 			if(i > max) max = i;
 		}

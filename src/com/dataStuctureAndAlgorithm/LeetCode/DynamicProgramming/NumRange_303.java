@@ -7,9 +7,9 @@ package com.dataStuctureAndAlgorithm.LeetCode.DynamicProgramming;
 *   思路：1、dp[i] = x表示0-i索引的所有数据和
 *        3、那么所求和即为dp[j] - dp[i - 1]
 * */
-public class SumRange_303 {
+public class NumRange_303 {
 	int[] dp;
- 	public SumRange_303(int[] nums) {
+ 	public NumRange_303(int[] nums) {
  		if(nums.length == 0) return;
 		dp = new int[nums.length];
  		dp[0] = nums[0];
