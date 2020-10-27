@@ -1,7 +1,5 @@
 package com.dataStuctureAndAlgorithm.LeetCode.DynamicProgramming;
 
-import com.dataStuctureAndAlgorithm.LeetCode.BinaryTree.LeafSimilarBT;
-
 import java.util.Arrays;
 
 /*

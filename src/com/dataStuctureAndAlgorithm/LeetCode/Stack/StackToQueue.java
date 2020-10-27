@@ -22,7 +22,7 @@ public class StackToQueue {
         while (!stack2.isEmpty()) stack1.push(stack2.pop());
         //将新元素放在栈顶
         stack1.push(x);
-        //两栈互换内容，结束后栈1为空，栈2中新元素沉底，实现先进先出的顺序
+        //两栈互换内容，结束后栈1为空，栈2中新元素沉底，实现后进后出的顺序
         while(!stack1.isEmpty()) stack2.push(stack1.pop());
     }
 
