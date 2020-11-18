@@ -14,7 +14,9 @@ public class OpenLock_752 {
 	public int openLock(String[] deadends, String target) {
 		Queue<String> queue = new LinkedList<>();
 		//将所有deadend节点放到List中去
-		Set<String> deadendsList = new HashSet<>(Arrays.asList(deadends));
+		//Set<String> deadendsList = new HashSet<>(Arrays.asList(deadends));
+		Set<String> deadendsList = new HashSet<>();
+		for(String s : deadends) deadendsList.add(s);
 		Set<String> visited = new HashSet<>();
 		visited.add("0000");
 		queue.offer("0000");
@@ -48,7 +50,6 @@ public class OpenLock_752 {
 		//遍历完所有结果后没有结果，就再也找不到了
 		return -1;
 	}
-	
 	
 	//这两个方法作用：四个数中的某个位数向前（向后）拨动后，四个数字组成的String应该怎么变化
 	public String plusOne(String s, int index){

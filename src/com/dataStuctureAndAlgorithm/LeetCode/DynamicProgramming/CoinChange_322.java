@@ -6,7 +6,7 @@ package com.dataStuctureAndAlgorithm.LeetCode.DynamicProgramming;
 * */
 public class CoinChange_322 {
 	public int coinChange(int[] coins, int amount) {
-		if(amount == 0) return 0;
+/*		if(amount == 0) return 0;
 		if(amount < 0 ) return -1;
 		//dp[i] = x 代表当amount为i时最少需要x枚硬币
 		int[] dp = new int[amount + 1];
@@ -23,7 +23,23 @@ public class CoinChange_322 {
 			}
 		}
 		
-		return dp[amount] == Integer.MAX_VALUE ? -1 : dp[amount];
+		return dp[amount] == Integer.MAX_VALUE ? -1 : dp[amount];*/
+			int[] dp = new int[amount + 1];
+			for(int i = 1; i < amount + 1; i++){
+				dp[i] = amount + 1;
+			}
+			dp[0] = 0;
+			
+			for(int i = 1; i < amount + 1; i++){
+				//coins有几个元素，就有几种选择，减去这几个元素后的，最小值即可
+				for(int coin : coins){
+					//若i - coin < 0说明无解，跳过当前coin直接进入下一个coin
+					if(i - coin < 0) continue;
+					dp[i] = Math.min(dp[i], dp[i - coin] + 1);
+				}
+			}
+			
+			return dp[amount] == amount + 1 ? -1 : dp[amount];
 	
 	
 	
@@ -52,7 +68,7 @@ public class CoinChange_322 {
 	
 	public static void main(String[] args) {
 		CoinChange_322 c = new CoinChange_322();
-		int[] coins = {1, 2, 5};
-		System.out.println(c.coinChange(coins, 11));
+		int[] coins = {2};
+		System.out.println(c.coinChange(coins, 3));
 	}
 }
